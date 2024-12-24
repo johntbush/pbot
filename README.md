@@ -30,28 +30,28 @@ python3 app.py
 # Resources
 
 Building Bots
-https://www.kubiya.ai/resource-post/how-to-build-a-slackbot-with-python
-https://tools.slack.dev/bolt-python/getting-started
+- https://www.kubiya.ai/resource-post/how-to-build-a-slackbot-with-python
+- https://tools.slack.dev/bolt-python/getting-started
 
 Accuweather API
-https://developer.accuweather.com/apis
+- https://developer.accuweather.com/apis
 
 Python Online
-https://www.online-python.com/
+- https://www.online-python.com/
 
 Javascript Online
-https://playcode.io/javascript
+- https://playcode.io/javascript
 
 Scratch
-https://scratch.mit.edu/
+- https://scratch.mit.edu/
 
 Markdown
-https://www.markdownguide.org/cheat-sheet/
+- https://www.markdownguide.org/cheat-sheet/
 
 Slack Blocks
-https://api.slack.com/reference/block-kit/blocks
-https://api.slack.com/reference/block-kit/blocks#header
-https://api.slack.com/reference/block-kit/blocks#section
+- https://api.slack.com/reference/block-kit/blocks
+- https://api.slack.com/reference/block-kit/blocks#header
+- https://api.slack.com/reference/block-kit/blocks#section
 
 # Task #1: Implement the `handle_weather_command()` function
 
