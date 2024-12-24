@@ -21,100 +21,12 @@ def handle_help_command(ack, body, say):
 @app.command("/pack")
 def handle_pack_command(ack, body, say):
     ack()
-    user_id = body["user_id"]
-    if len(body["text"].split(" ")) != 2:
-        say(f"<@{user_id}>, please enter a city and number of days")
-        return
-    city, days = body["text"].split(" ")
-    if not days.isdigit() or int(days) < 1 or int(days) > 5:
-        say(f"<@{user_id}>, please enter a valid number of days (1-5)")
-        return
-    city = weather.get_location(city)
-    if city:
-        forecast = weather.get_forecast(city.key)
-
-        packing_list = ['tent', 'sleeping bag', 'sleeping pad', 'water bottle', 'clothes', 'first aid kit',
-                        'flashlight']
-        under_60 = False
-        under_40 = False
-        under_30 = False
-        over_80 = False
-        precipitation = False
-        notes = []
-        for day in forecast:
-            if day.precipitation:
-                precipitation = True
-            if day.min_temp < 60:
-                under_60 = True
-            if day.min_temp < 30:
-                under_30 = True
-            if day.min_temp < 40:
-                under_40 = True
-            if day.max_temp > 80:
-                over_80 = True
-
-        if precipitation and not under_30:
-            notes.append(f"Looks like its going to rain! Make sure to bring rain gear!")
-            packing_list.append('rain gear')
-        if precipitation and under_30:
-            notes.append(f"Looks like its going to rain and maybe even snow! Be prepared! :snowman:")
-            packing_list.append('rain gear')
-            packing_list.append('snow shovel')
-        if under_60:
-            packing_list.append('lightweight jacket')
-            packing_list.append('pants')
-        if under_40:
-            notes.append(f"Brr, its going to be cold! :cold_face: Make sure to bring a :coat: and :gloves:")
-            packing_list.append('warm jacket')
-            packing_list.append('gloves')
-        if over_80:
-            notes.append(f"Looks like its going to be hot!:sunglasses: Make sure to bring sunscreen and a hat")
-            packing_list.append('shorts')
-            packing_list.append('sunscreen')
-            packing_list.append('hat')
-        blocks = []
-        blocks.append({
-            "type": "header",
-            "text": {
-                "type": "plain_text",
-                "text": f"Packing List for trip to {city.name}, {city.state}"
-            }
-        })
-        for note in notes:
-            blocks.append({"type": "section",
-             "text": {"type": "mrkdwn",
-                      "text": note}})
-        list_str = ''
-        for item in packing_list:
-            list_str += f"- {item}\n"
-        blocks.append(
-            {"type": "section",
-             "text": {"type": "mrkdwn",
-                      "text": list_str}})
-        blocks.append({"type": "divider"})
-        say({"blocks": blocks})
-    else:
-        say(f"City:{city} not found")
 
 
 @app.command("/weather")
 def handle_weather_command(ack, body, say):
     # Acknowledge the command request
     ack()
-    user_id = body["user_id"]
-    if len(body["text"].split(" ")) != 2:
-        say(f"<@{user_id}>, please enter a city and number of days")
-        return
-    city, days = body["text"].split(" ")
-    if not days.isdigit() or int(days) < 1 or int(days) > 5:
-        say(f"<@{user_id}>, please enter a valid number of days (1-5)")
-        return
-    city = weather.get_location(city)
-    if city:
-        forecast = weather.get_forecast(city.key)
-        say_forecast(forecast, city, days, say)
-    else:
-        say(f"City:{city} not found")
 
 
 def say_forecast(forecast, city, days, say):
