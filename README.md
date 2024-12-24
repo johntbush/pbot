@@ -45,6 +45,14 @@ https://playcode.io/javascript
 Scratch
 https://scratch.mit.edu/
 
+Markdown
+https://www.markdownguide.org/cheat-sheet/
+
+Slack Blocks
+https://api.slack.com/reference/block-kit/blocks
+https://api.slack.com/reference/block-kit/blocks#header
+https://api.slack.com/reference/block-kit/blocks#section
+
 # Task #1: Implement the `handle_weather_command()` function
 
 Validation:
