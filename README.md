@@ -36,10 +36,19 @@ https://tools.slack.dev/bolt-python/getting-started
 Accuweather API
 https://developer.accuweather.com/apis
 
-# Task #1: Implement the `handle_weather_command` function
+Python Online
+https://www.online-python.com/
+
+Javascript Online
+https://playcode.io/javascript
+
+Scratch
+https://scratch.mit.edu/
+
+# Task #1: Implement the `handle_weather_command()` function
 
 Validation:
-- make sure sends in two inputs the city name and the number of days
+- make sure user sends two inputs the city name and the number of days
 - make sure the number of days is a valid integer
 - if the validation fails let the user know what the problem is
 
@@ -56,10 +65,15 @@ If the city is valid get the forecast and say it to the user:
 
 If the city is not valid let the user know
 
-# Task #2: Implement the `handle_pack_command` function
+Bonus points for commenting on the weather, like:
+
+'It's going to be hot remember to bring sunscreen'
+'It's going to be cold remember to bring gloves and a hat'
+
+# Task #2: Implement the `handle_pack_command()` function
 
 Validation:
-- make sure sends in two inputs the city name and the number of days
+- make sure user sends two inputs the city name and the number of days
 - make sure the number of days is a valid integer
 - if the validation fails let the user know what the problem is
 
